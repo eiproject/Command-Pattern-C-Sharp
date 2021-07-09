@@ -4,13 +4,21 @@ using System.Text;
 
 namespace CommandPattern.Models {
   class Light {
-    private string _itemName = "Light"
+    private string _itemName = "Light";
+    private bool _isOnStatus = false;
     void On() {
-      Console.WriteLine(_itemName);
+      _isOnStatus = true;
     }
-
     void Off() {
-
+      _isOnStatus = false;
+    }
+    void Status() {
+      if (_isOnStatus) {
+        Console.WriteLine(_itemName + " ON");
+      }
+      else {
+        Console.WriteLine(_itemName + " OFF");
+      }
     }
   }
 }

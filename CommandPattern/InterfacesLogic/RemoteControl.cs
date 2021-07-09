@@ -4,14 +4,17 @@ using System.Text;
 
 namespace CommandPattern {
 
-  class RemoteControl {
-    private const int _numOfKey = 5; 
+  class RemoteControl : IRemoteControl{
+    private int _numOfKey; 
     private ICommand[] _onCommands;
     private ICommand[] _offCommands;
+    private ICommand _undoCommand;
 
-    internal RemoteControl() {
-      _onCommands = new Command[_numOfKey];
-      _offCommands = new Command[_numOfKey];
+    internal RemoteControl(int numOfKey) {
+      _numOfKey = numOfKey;
+
+      _onCommands = new ICommand[_numOfKey];
+      _offCommands = new ICommand[_numOfKey];
 
       ICommand noCommand = new NoCommand();
       for (int i = 0; i < _numOfKey; i++) {
@@ -19,9 +22,21 @@ namespace CommandPattern {
         _offCommands[i] = noCommand;
       }
     }
-    void setCommand(int slot, ICommand onCommand, ICommand offCommand) {
+    void IRemoteControl.setCommand(int slot, ICommand onCommand, ICommand offCommand) {
       _onCommands[slot] = onCommand;
       _offCommands[slot] = offCommand;
+    }
+
+    void IRemoteControl.onButtonPushed(int slot) {
+      _onCommands[slot].execute();
+      _undoCommand = _onCommands[slot];
+    }
+    void IRemoteControl.offButtonPushed(int slot) {
+      _offCommands[slot].execute();
+      _undoCommand = _offCommands[slot];
+    }
+    void IRemoteControl.undoButtonPushed() {
+      _undoCommand.undo();
     }
   }
 }
