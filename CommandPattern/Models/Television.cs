@@ -9,20 +9,22 @@ namespace CommandPattern.Models {
     private int _volume;
     private bool _isOnStatus = false;
 
-    void On() {
+    internal void On() {
       _isOnStatus = true;
+      Status();
     }
-    void Off() {
+    internal void Off() {
       _isOnStatus = false;
+      Status();
     }
 
-    void setInputChannel(int channelNumber) {
+    internal void setInputChannel(int channelNumber) {
       _channelNumber = channelNumber;
     }
-    void setVolume(int volume) {
+    internal void setVolume(int volume) {
       _volume = volume;
     }
-    void Status() {
+    internal void Status() {
       if (_isOnStatus) {
         Console.WriteLine(_itemName + " ON");
       }

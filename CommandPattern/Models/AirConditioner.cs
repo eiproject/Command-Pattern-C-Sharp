@@ -8,16 +8,18 @@ namespace CommandPattern.Models {
     private float _temperature;
     private bool _isOnStatus = false;
 
-    void On() {
+    internal void On() {
       _isOnStatus = true;
+      Status();
     }
-    void Off() {
+    internal void Off() {
       _isOnStatus = false;
+      Status();
     }
-    void SetTemperature(float temp) {
+    internal void SetTemperature(float temp) {
 
     }
-    void Status() {
+    internal void Status() {
       if (_isOnStatus) {
         Console.WriteLine(_itemName + " is ON");
       }

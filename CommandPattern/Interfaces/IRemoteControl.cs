@@ -8,5 +8,6 @@ namespace CommandPattern {
     void onButtonPushed(int slot);
     void offButtonPushed(int slot);
     void undoButtonPushed();
+    StringBuilder ViewRemoteCondition();
   }
 }

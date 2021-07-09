@@ -9,6 +9,7 @@ namespace CommandPattern {
     private ICommand[] _onCommands;
     private ICommand[] _offCommands;
     private ICommand _undoCommand;
+    private StringBuilder _remoteCondition;
 
     internal RemoteControl(int numOfKey) {
       _numOfKey = numOfKey;
@@ -26,7 +27,6 @@ namespace CommandPattern {
       _onCommands[slot] = onCommand;
       _offCommands[slot] = offCommand;
     }
-
     void IRemoteControl.onButtonPushed(int slot) {
       _onCommands[slot].execute();
       _undoCommand = _onCommands[slot];
@@ -37,6 +37,16 @@ namespace CommandPattern {
     }
     void IRemoteControl.undoButtonPushed() {
       _undoCommand.undo();
+    }
+
+    StringBuilder IRemoteControl.ViewRemoteCondition() {
+      _remoteCondition = new StringBuilder();
+      _remoteCondition.Append("Current Remote: \n");
+      for (int i = 0; i < _numOfKey; i++) {
+        _remoteCondition.Append("[slot "+ i +"]" + _onCommands[i].ToString() +"    " + _offCommands[i].ToString() + "\n");
+      }
+
+      return _remoteCondition;
     }
   }
 }

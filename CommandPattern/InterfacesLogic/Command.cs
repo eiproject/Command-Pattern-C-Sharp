@@ -4,11 +4,7 @@ using System.Text;
 
 namespace CommandPattern {
   class Command : ICommand {
-    void ICommand.execute() {
-      
-    }
-    void ICommand.undo() {
-      
-    }
+    void ICommand.execute() {}
+    void ICommand.undo() {}
   }
 }

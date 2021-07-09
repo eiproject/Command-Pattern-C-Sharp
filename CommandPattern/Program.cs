@@ -3,7 +3,9 @@
 namespace CommandPattern {
   class Program {
     static void Main(string[] args) {
-      Console.WriteLine("Hello Command Pattern!");
+      Console.WriteLine("Hello Command Pattern! Remote.");
+      Run Remote = new Run();
+      Remote.RunRemoteTest1();
     }
   }
 }

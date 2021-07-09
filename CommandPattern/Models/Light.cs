@@ -6,13 +6,15 @@ namespace CommandPattern.Models {
   class Light {
     private string _itemName = "Light";
     private bool _isOnStatus = false;
-    void On() {
+    internal void On() {
       _isOnStatus = true;
+      Status();
     }
-    void Off() {
+    internal void Off() {
       _isOnStatus = false;
+      Status();
     }
-    void Status() {
+    internal void Status() {
       if (_isOnStatus) {
         Console.WriteLine(_itemName + " ON");
       }
