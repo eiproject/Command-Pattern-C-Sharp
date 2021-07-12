@@ -5,5 +5,6 @@ using System.Text;
 namespace MCDOrder.Models {
   interface IMenu {
     string MenuName();
+    void CustomerName(string customer);
   }
 }

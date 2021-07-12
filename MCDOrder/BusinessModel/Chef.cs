@@ -27,7 +27,7 @@ namespace MCDOrder.BusinessModel {
           _order.Add(new MakeMcDouble((McDouble)orders[i]));
         }
         else {
-
+          // nothing
         }
       }
 

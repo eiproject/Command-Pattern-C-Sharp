@@ -6,6 +6,8 @@ using MCDOrder.BusinessModel;
 namespace MCDOrder.Models {
   class CheeseBurger : IMenu{
     private string _menuName = "Cheese Burger";
+    private string _customerName;
+
     private IIngredients _ingredients;
     internal CheeseBurger(IIngredients ingredients) {
       _ingredients = ingredients;
@@ -13,7 +15,9 @@ namespace MCDOrder.Models {
     string IMenu.MenuName() {
       return _menuName;
     }
-
+    void IMenu.CustomerName(string customerName) {
+      _customerName = customerName;
+    }
     internal void CookCheeseBurger() {
       _ingredients.Bread();
       _ingredients.Lettuce();
@@ -26,7 +30,7 @@ namespace MCDOrder.Models {
       Status();
     }
     internal void Status() {
-      Console.WriteLine(_menuName);
+      Console.WriteLine(_customerName + " : " + _menuName + " Done");
     }
   }
 }

@@ -6,12 +6,17 @@ using MCDOrder.BusinessModel;
 namespace MCDOrder.Models {
   class McDouble : IMenu{
     private string _menuName = "Mc Double Burger";
+    private string _customerName;
+
     private IIngredients _ingredients;
     internal McDouble(IIngredients ingredients) {
       _ingredients = ingredients;
     }
     string IMenu.MenuName() {
       return _menuName;
+    }
+    void IMenu.CustomerName(string customerName) {
+      _customerName = customerName;
     }
     internal void CookMcDouble() {
       _ingredients.Bread();
@@ -26,7 +31,7 @@ namespace MCDOrder.Models {
       Status();
     }
     internal void Status() {
-      Console.WriteLine(_menuName);
+      Console.WriteLine(_customerName + " : " + _menuName + " Done");
     }
   }
 }

@@ -4,8 +4,9 @@ using System.Text;
 using MCDOrder.Models;
 
 namespace MCDOrder.BusinessModel {
-  interface IWaitress {
-    List<IMenu> OrderUp();
-    void PickUpOrder(List<IMenu> orders);
+  interface ICustomer
+    {
+    void CreateOrder(IMenu menu, int numbers);
+    List<IMenu> OrderList();
   }
 }

@@ -17,15 +17,28 @@ namespace MCDOrder {
       IMenu McDoubleBurger = new McDouble(ingredient);
 
       // Write order
+      ICustomer Customer1 = new Customer("Joko");
+      Customer1.CreateOrder(BigMacBurger, 1);
+      Customer1.CreateOrder(CheeseBurger, 3);
+
+      ICustomer Customer2 = new Customer("Bambang");
+      Customer2.CreateOrder(ChickenBurger, 2);
+
+      ICustomer Customer3 = new Customer("Syaiful");
+      Customer3.CreateOrder(McDoubleBurger, 4);
+
+
+      // Waitress take
       IWaitress Waitress1 = new Waitress();
-      Waitress1.CreateOrder(BigMacBurger, 1);
-      Waitress1.CreateOrder(CheeseBurger, 3);
+      Waitress1.PickUpOrder(Customer1.OrderList());
+      Waitress1.PickUpOrder(Customer2.OrderList());
+      Waitress1.PickUpOrder(Customer3.OrderList());
+      
+      List<IMenu> Orders  = Waitress1.OrderUp();
 
-      // Order up
-      Waitress1.OrderUp();
-
+      // Chef make the order
       IChef Chef1 = new Chef();
-      List<ICookMenu> CookingMenu = Chef1.ReadOrder(Waitress1.TakeOrderList());
+      List<ICookMenu> CookingMenu = Chef1.ReadOrder(Orders);
       Chef1.Cooking(CookingMenu);
     }
   }
