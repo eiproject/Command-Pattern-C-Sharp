@@ -10,12 +10,12 @@ namespace CommandPattern.Models {
     internal TelevisionOnCommand(Television television) {
       _television = television;
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _television.On();
-      _television.setInputChannel(_channelNumber);
-      _television.setVolume(_volume);
+      _television.SetInputChannel(_channelNumber);
+      _television.SetVolume(_volume);
     }
-    void ICommand.undo() {
+    void ICommand.Undo() {
       _television.Off();
     }
   }

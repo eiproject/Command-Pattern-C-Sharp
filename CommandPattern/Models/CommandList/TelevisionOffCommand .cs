@@ -8,10 +8,10 @@ namespace CommandPattern.Models {
     internal TelevisionOffCommand(Television television) {
       _television = television;
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _television.Off();
     }
-    void ICommand.undo() {
+    void ICommand.Undo() {
       _television.On();
     }
   }

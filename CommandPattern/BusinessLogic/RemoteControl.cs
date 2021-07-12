@@ -23,21 +23,21 @@ namespace CommandPattern {
         _offCommands[i] = noCommand;
       }
     }
-    void IRemoteControl.setCommand(int slot, ICommand onCommand, ICommand offCommand) {
+    void IRemoteControl.SetCommand(int slot, ICommand onCommand, ICommand offCommand) {
       _onCommands[slot] = onCommand;
       _offCommands[slot] = offCommand;
     }
-    void IRemoteControl.onButtonPushed(int slot) {
-      _onCommands[slot].execute();
+    void IRemoteControl.OnButtonPushed(int slot) {
+      _onCommands[slot].Execute();
       _undoCommand = _onCommands[slot];
     }
-    void IRemoteControl.offButtonPushed(int slot) {
-      _offCommands[slot].execute();
+    void IRemoteControl.OffButtonPushed(int slot) {
+      _offCommands[slot].Execute();
       _undoCommand = _offCommands[slot];
     }
-    void IRemoteControl.undoButtonPushed() {
+    void IRemoteControl.UndoButtonPushed() {
       Console.WriteLine("Undo button pushed:");
-      _undoCommand.undo();
+      _undoCommand.Undo();
     }
 
     StringBuilder IRemoteControl.ViewRemoteCondition() {

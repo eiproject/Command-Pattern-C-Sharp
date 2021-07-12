@@ -9,11 +9,11 @@ namespace CommandPattern.Models {
     internal AirConditionerOnCommand(AirConditioner ac) {
       _airConditioner = ac;
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _airConditioner.On();
       _airConditioner.SetTemperature(_temperature);
     }
-    void ICommand.undo() {
+    void ICommand.Undo() {
       _airConditioner.Off();
     }
   }

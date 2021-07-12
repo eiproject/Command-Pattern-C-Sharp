@@ -12,6 +12,7 @@ namespace CommandPattern.Models {
     }
     internal void On() {
       _isOnStatus = true;
+      SetTemperature(18);
       Status();
     }
     internal void Off() {
@@ -19,7 +20,7 @@ namespace CommandPattern.Models {
       Status();
     }
     internal void SetTemperature(float temp) {
-
+      _temperature = temp;
     }
     internal void Status() {
       if (_isOnStatus) {

@@ -8,10 +8,10 @@ namespace CommandPattern.Models {
     internal AirConditionerOffCommand(AirConditioner ac) {
       _airConditioner = ac;
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _airConditioner.Off();
     }
-    void ICommand.undo() {
+    void ICommand.Undo() {
       _airConditioner.On();
     }
   }

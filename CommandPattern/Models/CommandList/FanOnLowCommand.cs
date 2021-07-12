@@ -9,12 +9,12 @@ namespace CommandPattern.Models {
     internal FanOnLowCommand(Fan fan) {
       _fan = fan;
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _prevSpeed = _fan.GetSpeed();
       _fan.Low();
     }
 
-    void ICommand.undo() {
+    void ICommand.Undo() {
       if (_prevSpeed == (int)FanSpeed.HIGH) {
         _fan.High();
       }

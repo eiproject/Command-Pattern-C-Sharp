@@ -4,10 +4,10 @@ using System.Text;
 
 namespace CommandPattern {
   interface IRemoteControl {
-    void setCommand(int slot, ICommand onCommand, ICommand offCommand);
-    void onButtonPushed(int slot);
-    void offButtonPushed(int slot);
-    void undoButtonPushed();
+    void SetCommand(int slot, ICommand onCommand, ICommand offCommand);
+    void OnButtonPushed(int slot);
+    void OffButtonPushed(int slot);
+    void UndoButtonPushed();
     StringBuilder ViewRemoteCondition();
   }
 }

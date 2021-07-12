@@ -9,11 +9,11 @@ namespace CommandPattern.Models {
       _light = light;
 
     }
-    void ICommand.execute() {
+    void ICommand.Execute() {
       _light.On();
     }
 
-    void ICommand.undo() {
+    void ICommand.Undo() {
       _light.Off();
     }
   }

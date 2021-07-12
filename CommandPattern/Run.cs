@@ -12,36 +12,56 @@ namespace CommandPattern {
       AirConditioner LivingRoomAC = new AirConditioner("Living Room");
       Fan CeilingFan = new Fan("Ceiling");
 
+      ICommand[] ComingHomeCommand = {
+        new LightOnCommand(LivingRoomLight),
+        new AirConditionerOnCommand(LivingRoomAC),
+        new FanOnMediumCommand(CeilingFan)
+      };
+      ICommand[] LeavingHomeCommand = {
+        new LightOffCommand(LivingRoomLight),
+        new AirConditionerOffCommand(LivingRoomAC),
+        new FanOffCommand(CeilingFan)
+      };
+      MacroCommand ComingHome = new MacroCommand(ComingHomeCommand);
+      MacroCommand LeavingHome = new MacroCommand(LeavingHomeCommand);
+
       IRemoteControl RemoteA = new RemoteControl(_numberOfKey);
-      RemoteA.setCommand(0, new LightOnCommand(LivingRoomLight), new LightOffCommand(LivingRoomLight));
-      RemoteA.setCommand(1, new TelevisionOnCommand(LivingRoomTelevision), new TelevisionOffCommand(LivingRoomTelevision));
-      RemoteA.setCommand(2, new AirConditionerOnCommand(LivingRoomAC), new AirConditionerOffCommand(LivingRoomAC));
-      RemoteA.setCommand(3, new FanOnLowCommand(CeilingFan), new FanOffCommand(CeilingFan));
-      RemoteA.setCommand(4, new FanOnMediumCommand(CeilingFan), new FanOffCommand(CeilingFan));
-      RemoteA.setCommand(5, new FanOnHighCommand(CeilingFan), new FanOffCommand(CeilingFan));
+      RemoteA.SetCommand(0, new LightOnCommand(LivingRoomLight), new LightOffCommand(LivingRoomLight));
+      RemoteA.SetCommand(1, new TelevisionOnCommand(LivingRoomTelevision), new TelevisionOffCommand(LivingRoomTelevision));
+      RemoteA.SetCommand(2, new AirConditionerOnCommand(LivingRoomAC), new AirConditionerOffCommand(LivingRoomAC));
+      RemoteA.SetCommand(3, new FanOnLowCommand(CeilingFan), new FanOffCommand(CeilingFan));
+      RemoteA.SetCommand(4, new FanOnMediumCommand(CeilingFan), new FanOffCommand(CeilingFan));
+      RemoteA.SetCommand(5, new FanOnHighCommand(CeilingFan), new FanOffCommand(CeilingFan));
+      RemoteA.SetCommand(6, ComingHome, LeavingHome);
 
       Console.WriteLine(RemoteA.ViewRemoteCondition());
       // TV test
-      RemoteA.onButtonPushed(1);
-      RemoteA.offButtonPushed(1);
+      RemoteA.OnButtonPushed(1);
+      RemoteA.OffButtonPushed(1);
 
       // Light test
-      RemoteA.onButtonPushed(0);
-      RemoteA.offButtonPushed(0);
-      RemoteA.undoButtonPushed();
-      
+      RemoteA.OnButtonPushed(0);
+      RemoteA.OffButtonPushed(0);
+      RemoteA.UndoButtonPushed();
+
       // AC test
-      RemoteA.onButtonPushed(2);
-      RemoteA.offButtonPushed(2);
-      RemoteA.undoButtonPushed();
+      RemoteA.OnButtonPushed(2);
+      RemoteA.OffButtonPushed(2);
+      RemoteA.UndoButtonPushed();
 
       // Fan test
-      RemoteA.onButtonPushed(3);
-      RemoteA.onButtonPushed(4);
-      RemoteA.undoButtonPushed();
-      RemoteA.onButtonPushed(5);
-      RemoteA.offButtonPushed(5);
-      RemoteA.undoButtonPushed();
+      RemoteA.OnButtonPushed(3);
+      RemoteA.OnButtonPushed(4);
+      RemoteA.UndoButtonPushed();
+      RemoteA.OnButtonPushed(5);
+      RemoteA.OffButtonPushed(5);
+      RemoteA.UndoButtonPushed();
+
+      // AC test
+      RemoteA.OnButtonPushed(6);
+      RemoteA.OffButtonPushed(6);
+      RemoteA.UndoButtonPushed();
+
     }
   }
 }

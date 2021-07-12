@@ -13,6 +13,8 @@ namespace CommandPattern.Models {
     }
     internal void On() {
       _isOnStatus = true;
+      SetInputChannel(1);
+      SetVolume(5);
       Status();
     }
     internal void Off() {
@@ -20,10 +22,10 @@ namespace CommandPattern.Models {
       Status();
     }
 
-    internal void setInputChannel(int channelNumber) {
+    internal void SetInputChannel(int channelNumber) {
       _channelNumber = channelNumber;
     }
-    internal void setVolume(int volume) {
+    internal void SetVolume(int volume) {
       _volume = volume;
     }
     internal void Status() {
