@@ -12,7 +12,7 @@ namespace CommandPattern.Models {
       _airConditioner.Off();
     }
     void ICommand.undo() {
-      
+      _airConditioner.On();
     }
   }
 }

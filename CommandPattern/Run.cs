@@ -6,7 +6,7 @@ using CommandPattern.Models;
 namespace CommandPattern {
   class Run {
     private int _numberOfKey = 5;
-    internal void RunRemoteTest1() {
+    internal void RemoteLoader() {
       Light LivingRoomLight = new Light();
       Television LivingRoomTelevision = new Television();
       AirConditioner LivingRoomAC = new AirConditioner();
@@ -17,9 +17,14 @@ namespace CommandPattern {
       RemoteA.setCommand(2, new AirConditionerOnCommand(LivingRoomAC), new AirConditionerOffCommand(LivingRoomAC));
 
       Console.WriteLine(RemoteA.ViewRemoteCondition());
-
       RemoteA.onButtonPushed(1);
       RemoteA.offButtonPushed(1);
+      RemoteA.onButtonPushed(0);
+      RemoteA.offButtonPushed(0);
+      RemoteA.undoButtonPushed();
+      RemoteA.onButtonPushed(2);
+      RemoteA.offButtonPushed(2);
+      RemoteA.undoButtonPushed();
     }
   }
 }

@@ -12,7 +12,7 @@ namespace CommandPattern.Models {
       _television.Off();
     }
     void ICommand.undo() {
-      
+      _television.On();
     }
   }
 }

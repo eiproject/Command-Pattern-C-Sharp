@@ -14,7 +14,7 @@ namespace CommandPattern.Models {
     }
 
     void ICommand.undo() {
-      throw new NotImplementedException();
+      _light.Off();
     }
   }
 }

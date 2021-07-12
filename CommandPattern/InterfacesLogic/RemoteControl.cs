@@ -36,6 +36,7 @@ namespace CommandPattern {
       _undoCommand = _offCommands[slot];
     }
     void IRemoteControl.undoButtonPushed() {
+      Console.WriteLine("Undo button pushed:");
       _undoCommand.undo();
     }
 

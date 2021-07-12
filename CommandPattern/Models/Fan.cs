@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace CommandPattern.Models {
-  class LightOffCommand : ICommand {
-    private Light _light;
-    internal LightOffCommand(Light light) {
-      _light = light;
-
-    }
+  class Fan : ICommand {
     void ICommand.execute() {
-      _light.Off();
+      throw new NotImplementedException();
     }
 
     void ICommand.undo() {
-      _light.On();
+      throw new NotImplementedException();
     }
   }
 }
