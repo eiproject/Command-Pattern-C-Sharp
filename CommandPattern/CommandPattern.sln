@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern.csproj", "{1A01E5ED-94BB-41EC-9939-E4D9890583F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandPattern", "CommandPattern.csproj", "{1A01E5ED-94BB-41EC-9939-E4D9890583F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCDOrder", "..\MCDOrder\MCDOrder.csproj", "{F15D13F0-FE40-4320-AF33-081B1EB654D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1A01E5ED-94BB-41EC-9939-E4D9890583F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A01E5ED-94BB-41EC-9939-E4D9890583F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A01E5ED-94BB-41EC-9939-E4D9890583F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15D13F0-FE40-4320-AF33-081B1EB654D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15D13F0-FE40-4320-AF33-081B1EB654D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15D13F0-FE40-4320-AF33-081B1EB654D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15D13F0-FE40-4320-AF33-081B1EB654D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
