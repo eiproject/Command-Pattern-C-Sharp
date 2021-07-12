@@ -8,7 +8,9 @@ namespace CommandPattern.Models {
     private int _channelNumber;
     private int _volume;
     private bool _isOnStatus = false;
-
+    internal Television(string detail) {
+      _itemName += $" on { detail }";
+    }
     internal void On() {
       _isOnStatus = true;
       Status();

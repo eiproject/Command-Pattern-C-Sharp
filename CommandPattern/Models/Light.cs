@@ -6,6 +6,9 @@ namespace CommandPattern.Models {
   class Light {
     private string _itemName = "Light";
     private bool _isOnStatus = false;
+    internal Light(string detail) {
+      _itemName += $" on { detail }";
+    }
     internal void On() {
       _isOnStatus = true;
       Status();

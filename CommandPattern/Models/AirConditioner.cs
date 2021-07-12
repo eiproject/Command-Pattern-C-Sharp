@@ -7,7 +7,9 @@ namespace CommandPattern.Models {
     private string _itemName = "Air Conditioner";
     private float _temperature;
     private bool _isOnStatus = false;
-
+    internal AirConditioner(string detail) {
+      _itemName += $" on { detail }";
+    }
     internal void On() {
       _isOnStatus = true;
       Status();
