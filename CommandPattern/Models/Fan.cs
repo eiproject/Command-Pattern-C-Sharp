@@ -13,13 +13,14 @@ namespace CommandPattern.Models {
     private string _itemName = "Fan";
     private int _fanSpeed;
     private bool _isOnStatus = false;
+
+    internal Fan(string detail) {
+      _itemName += $" on { detail }";
+    }
     internal void High() {
       _isOnStatus = true;
       _fanSpeed = (int)FanSpeed.HIGH;
       Status();
-    }
-    internal Fan(string detail) {
-      _itemName += $" on { detail }";
     }
     internal void Medium() {
       _isOnStatus = true;

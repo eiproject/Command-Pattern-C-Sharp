@@ -5,7 +5,7 @@ using CommandPattern.Models;
 
 namespace CommandPattern {
   class Run {
-    private int _numberOfKey = 7;
+    private const int _numberOfKey = 7;
     internal void RemoteLoader() {
       Light LivingRoomLight = new Light("Living Room");
       Television LivingRoomTelevision = new Television("Living Room");
@@ -35,33 +35,33 @@ namespace CommandPattern {
       RemoteA.SetCommand(6, ComingHome, LeavingHome);
 
       Console.WriteLine(RemoteA.ViewRemoteCondition());
-      // TV test
-      RemoteA.OnButtonPushed(1);
-      RemoteA.OffButtonPushed(1);
+      /*      // TV test
+            RemoteA.OnButtonPushed(1);
+            RemoteA.OffButtonPushed(1);
+            RemoteA.UndoButtonPushed();*/
 
-      // Light test
-      RemoteA.OnButtonPushed(0);
-      RemoteA.OffButtonPushed(0);
-      RemoteA.UndoButtonPushed();
+      /*      // Light test
+            RemoteA.OnButtonPushed(0);
+            RemoteA.OffButtonPushed(0);
+            RemoteA.UndoButtonPushed();
 
-      // AC test
-      RemoteA.OnButtonPushed(2);
-      RemoteA.OffButtonPushed(2);
-      RemoteA.UndoButtonPushed();
+            // AC test
+            RemoteA.OnButtonPushed(2);
+            RemoteA.OffButtonPushed(2);
+            RemoteA.UndoButtonPushed();*/
 
-      // Fan test
-      RemoteA.OnButtonPushed(3);
-      RemoteA.OnButtonPushed(4);
-      RemoteA.UndoButtonPushed();
-      RemoteA.OnButtonPushed(5);
-      RemoteA.OffButtonPushed(5);
-      RemoteA.UndoButtonPushed();
+      /*      // Fan test
+            RemoteA.OnButtonPushed(3);
+            RemoteA.OnButtonPushed(4);
+            RemoteA.UndoButtonPushed();
+            RemoteA.OnButtonPushed(5);
+            RemoteA.OffButtonPushed(5);
+            RemoteA.UndoButtonPushed();*/
 
-      // AC test
+      // Macro test
       RemoteA.OnButtonPushed(6);
       RemoteA.OffButtonPushed(6);
       RemoteA.UndoButtonPushed();
-
     }
   }
 }
